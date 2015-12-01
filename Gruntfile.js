@@ -90,6 +90,9 @@ module.exports = function(grunt) {
 
         /* https://www.npmjs.com/package/grunt-contrib-imagemin */
         imagemin: {
+            options: {
+                optimizationLevel: 5
+            },
             target: {
                 files: [{
                     expand: true,
@@ -114,7 +117,8 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd:'app/',
                     src: ['js/**/*.js',
-                          'css/**/*.css'
+                          'css/**/*.css',
+                          '.htaccess'
                     ],
                     dest: 'dist/'
                 }]
