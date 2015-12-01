@@ -31,10 +31,10 @@ module.exports = function(grunt) {
 
                 files: [{
                     expand: true,
-                    src: ['*.{gif,jpg,png}', '!project*.jpg'],
+                    src: ['*.{gif,jpg,png}'],
                     // placed it outside app since these will be processed and are not part of your app/website
                     cwd: 'images_src/',
-                    dest: 'app/images/'
+                    dest: 'app/img'
                 }]
             },
 
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
                     expand: true,
                     src: ['project*.{gif,jpg,png}'],
                     cwd: 'images_src/',
-                    dest: 'app/images/'
+                    dest: 'app/img/'
                 }]
             }
         },
@@ -93,9 +93,9 @@ module.exports = function(grunt) {
             target: {
                 files: [{
                     expand: true,
-                    cwd: 'app/images/',
-                    src: ['**/*.{jpg,gif,svg,jpeg,png}'],
-                    dest: 'dist/images/'
+                    cwd: 'app/',
+                    src: ['**/*.{jpg,png}'],
+                    dest: 'dist/'
                 }]
             }
         },
@@ -114,12 +114,27 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd:'app/',
                     src: ['js/**/*.js',
-                          '**/*.html',
-                          'css/**/*.css',
+                          'css/**/*.css'
                     ],
                     dest: 'dist/'
                 }]
-            },
+            }
+        },
+
+        // https://www.npmjs.com/package/grunt-contrib-htmlmin
+        htmlmin: {                                     // Task 
+            dist: {                                      // Target 
+                options: {                                 // Target options 
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: [{
+                    expand: true,                                   // Dictionary of files 
+                    cwd: 'app/',
+                    src: ['**/*.html'],
+                    dest: 'dist/'
+                }]
+            }
         },
 
         // https://www.npmjs.com/package/grunt-contrib-watch
@@ -128,7 +143,8 @@ module.exports = function(grunt) {
                 files: ['app/**/*.html',
                         'app/js/**/*.js',
                         'app/css/**/*.css',
-                        'app/images/**/*.{jpg,gif,svg,jpeg,png}'
+                        'app/img/**/*.{jpg,gif,svg,jpeg,png}',
+                        'app/views/images/**/*.{jpg,gif,svg,jpeg,png}'
                 ],
                 options: {
                     livereload: true
@@ -156,7 +172,7 @@ module.exports = function(grunt) {
 
             dist: {
                 options: {
-                    port: 9001,
+                    port: 9000,
                     base: 'dist',
                     open: true,
                     keepalive: true,
@@ -172,6 +188,9 @@ module.exports = function(grunt) {
 
     // default task   > grunt
     grunt.registerTask('default', [ 'connect:app', 'watch' ]);
+    
+
+    grunt.registerTask('img-min', [ 'imagemin' ]);
 
     // create different sized images    > grunt responsive-img
     grunt.registerTask('responsive-img', ['responsive_images']);
@@ -180,6 +199,6 @@ module.exports = function(grunt) {
     grunt.registerTask('validate-js', ['jshint']);
 
     //publish finished site to /dist directory  > grunt publish
-    grunt.registerTask('publish', ['clean:dist', 'validate-js', 'copy:dist', 'imagemin', 'connect:dist']);
+    grunt.registerTask('publish', ['clean:dist', 'validate-js', 'copy:dist', 'imagemin', 'htmlmin:dist', 'connect:dist']);
 
 };
