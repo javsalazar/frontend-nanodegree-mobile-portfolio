@@ -8,7 +8,7 @@ module.exports = function(grunt) {
     // http://gruntjs.com/configuring-tasks#grunt-configuration
     grunt.initConfig({
 
-        dist: '../',
+        dist: '..',
 
         // https://www.npmjs.com/package/grunt-responsive-images
         responsive_images: {
