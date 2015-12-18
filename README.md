@@ -17,7 +17,23 @@ Improvements:
 5. Aysnc google fonts.
 5. Async non-critical javascript and moved to bottom of page.
 6. minified js,css, and html.
+mobile score on github page:
+http://imgur.com/JrVlmWR
+
+desktop score on github page:
+http://imgur.com/wsZfGUQ
+
 7. For apache server added .htaccess files per recommendation settings from [Apache Server Configs](https://github.com/h5bp/server-configs-apache). If not using apache can try generating one for other platforms [h5bp - geneartor-server-config](https://github.com/h5bp/generator-server-configs).
+
+mobile score on apache server:
+http://imgur.com/9YSuCji
+
+desktop score on apache server:
+http://imgur.com/0GSTomo
+
+
+
+
 
 
 1. To inspect the site on your phone, you can run a local server
