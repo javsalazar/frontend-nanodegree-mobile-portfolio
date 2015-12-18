@@ -17,11 +17,11 @@ Improvements:
 5. Aysnc google fonts.
 5. Async non-critical javascript and moved to bottom of page.
 6. minified js,css, and html.
-mobile score on github page:
-http://imgur.com/JrVlmWR
+	* mobile score on github page:
+		* http://imgur.com/JrVlmWR
 
-desktop score on github page:
-http://imgur.com/wsZfGUQ
+ 	* desktop score on github page:
+		*http://imgur.com/wsZfGUQ
 
 7. For apache server added .htaccess files per recommendation settings from [Apache Server Configs](https://github.com/h5bp/server-configs-apache). If not using apache can try generating one for other platforms [h5bp - geneartor-server-config](https://github.com/h5bp/generator-server-configs).
 
