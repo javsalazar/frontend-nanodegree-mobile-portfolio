@@ -35,13 +35,17 @@ form {
     height: 94px;
     width: 73px;
     z-index: -1;
-    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
     will-change: left;
 }
 
 /*default width*/
 .randomPizzaContainer {
     float: left;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     width: 33.3%;
 }
