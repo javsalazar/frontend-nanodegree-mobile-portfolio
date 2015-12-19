@@ -73,7 +73,7 @@ For the purpose of uploading project to github all project related files are loc
 
 
 
-*** To View Project
+### To View Project
 
 * [Github](http://javsalazar.github.io/frontend-nanodegree-mobile-portfolio/)
 * [Other](http://p4.xjav.com)
