@@ -19,7 +19,7 @@ Improvements:
 6. minified js,css, and html.
 	* mobile score on github page:
 		* http://imgur.com/JrVlmWR
-		* http://i.imgur.com/JrVlmWR.png
+		* (http://i.imgur.com/JrVlmWR.png)
 
  	* desktop score on github page:
 		*http://imgur.com/wsZfGUQ
