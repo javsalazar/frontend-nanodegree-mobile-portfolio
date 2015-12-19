@@ -69,7 +69,7 @@ For the purpose of uploading project to github all project related files are loc
 	* place original image in ```_src/images_src``` directory
 	* from _src folder run ```grunt responsive_images```.  According to config 3 images will be generated and placed in the app/img folder.
 4. To manually lint your js run ```grunt jshint:src```. There are two seperate options files used for linting, one for your javascript and the other for the Grunfile.js
-5. to publish project run ```grunt publish```.  This task will output optimzed files for project and start server with optimized project files to review.
+5. to publish project run ```grunt publish```.  This task will output optimized files for project and start server with optimized project files to review.
 
 
 
