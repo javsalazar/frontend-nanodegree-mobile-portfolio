@@ -526,12 +526,15 @@ function initPizzas () {
         s = 200,
         totalPizzas = cols * rows;
 
+    // define variable outside loop to cache
+    var elem;
     for (var i = 0; i < totalPizzas; i++) {
-        var elem = document.createElement('img');
+        elem = document.createElement('img');
         elem.className = 'mover';
         elem.src = "images/pizza.png";
-        elem.basicLeft = (i % cols) * s;
-        elem.style.top = (Math.floor(i / cols) * s) + 100    + 'px';
+        // give each pizza an initial left value that will be transform in updatePositions()
+        elem.style.left = (i % cols) * s + 100 + 'px';
+        elem.style.top = (Math.floor(i / cols) * s) + 100 + 'px';
         movingPizzaContainer.appendChild(elem);
         //create an array of pizzas so we don't need to query for them each in updatePosition()
         pizzaList.push(elem);
