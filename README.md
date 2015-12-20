@@ -48,6 +48,7 @@ Improvements:
 8. used transform insted of left when moving pizzas so we only trigger composite.
 9. instead of generating 200 moving pizza element only genereate enough for current viewport.
 10. used a throttle function that uses requestAnimationFrame to optimize scrolling event.
+11. updated initPizza() to give each generated elem an initial  'left' position value and also moved var decleration outside loop for performance benefit.
 
 ## Part 3: Grunt workflow
 
